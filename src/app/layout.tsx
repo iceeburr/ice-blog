@@ -1,8 +1,30 @@
 import './globals.css'
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import { Rowdies, Varela_Round, Nunito, Comfortaa } from 'next/font/google'
 
-const inter = Inter({ subsets: ['latin'] })
+const rowdies = Rowdies({
+  subsets: ['latin'],
+  weight: "300",
+  variable: '--font-rowdies'
+})
+
+const comfortaa = Comfortaa({
+  subsets: ['latin'],
+  weight: "300",
+  variable: '--font-comfortaa'
+})
+
+const varelaRound = Varela_Round({
+  subsets: ['latin'],
+  weight: "400",
+  variable: '--font-varelaRound'
+})
+
+const nunito = Nunito({
+  subsets: ['latin'],
+  weight: "300",
+  variable: '--font-nunito'
+})
 
 export const metadata: Metadata = {
   title: "</> Coding with Love ❤️",
@@ -15,8 +37,8 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
+    <html lang="en" className={`${rowdies.variable} ${comfortaa.variable} ${varelaRound.variable} ${nunito.variable}`}>
+      <body>{children}</body>
     </html>
   )
 }
