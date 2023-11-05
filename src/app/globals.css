@@ -109,7 +109,7 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     opacity: 0.25;
-    transition: 1s ease-in-out;
+    transition: 0.2s ease-in-out;
 }
 
 .not-found-logo:hover,
