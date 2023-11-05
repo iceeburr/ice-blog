@@ -88,3 +88,10 @@
     width: 100%;
     left: 0;
 }
+
+.not-found-logo {
+    background: linear-gradient(var(--gradient-angle, 45deg), var(--gradient-colors));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}

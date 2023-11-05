@@ -4,18 +4,17 @@ import Link from "next/link";
 import { gsap } from "gsap";
 
 const NotFoundPage = () => {
-  const jumboRef = useRef<HTMLDivElement>(null);
-  const linkRef = useRef<HTMLAnchorElement>(null);
+  const raysRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const jumboNode = jumboRef.current;
+    const raysNode = raysRef.current;
 
     const handleMouseMove = (event: MouseEvent) => {
-      if (jumboNode) {
+      if (raysNode) {
         const { clientX, clientY } = event;
         const xPercent = (clientX / window.innerWidth) * 5;
         const yPercent = (clientY / window.innerHeight) * 5;
-        gsap.to(jumboNode, {
+        gsap.to(raysNode, {
           backgroundPosition: `${xPercent}% ${yPercent}%`,
           duration: 0.5,
           ease: "power1.out",
@@ -27,41 +26,7 @@ const NotFoundPage = () => {
 
     return () => {
       window.removeEventListener("mousemove", handleMouseMove);
-      gsap.killTweensOf(jumboNode);
-    };
-  }, []);
-
-  useEffect(() => {
-    const link = linkRef.current;
-
-    const handleMouseEnter = () => {
-      gsap.to(link, {
-        "--underline-width": "100%",
-        "--underline-left": "0",
-        duration: 0.5,
-        ease: "power1.out",
-      });
-    };
-
-    const handleMouseLeave = () => {
-      gsap.to(link, {
-        "--underline-width": "0",
-        "--underline-left": "50%",
-        duration: 0.5,
-        ease: "power1.out",
-      });
-    };
-
-    if (link) {
-      link.addEventListener("mouseenter", handleMouseEnter);
-      link.addEventListener("mouseleave", handleMouseLeave);
-    }
-
-    return () => {
-      if (link) {
-        link.removeEventListener("mouseenter", handleMouseEnter);
-        link.removeEventListener("mouseleave", handleMouseLeave);
-      }
+      gsap.killTweensOf(raysNode);
     };
   }, []);
 
@@ -69,7 +34,7 @@ const NotFoundPage = () => {
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-b from-gray-800 to-black">
       <div className="absolute inset-0 overflow-hidden">
         <div
-          ref={jumboRef}
+          ref={raysRef}
           className="not-found-rays absolute -inset-10 opacity-50"
         ></div>
       </div>
@@ -81,6 +46,11 @@ const NotFoundPage = () => {
         </p>
         <Link href="/" className="not-found-return text-blue-300">
           Go to landing page
+        </Link>
+      </div>
+      <div className="fixed bottom-0 left-0 p-4">
+        <Link href="/" className="text-4xl font-rowdies not-found-logo">
+          iceeburr.ru
         </Link>
       </div>
     </div>
