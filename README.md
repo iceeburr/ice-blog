@@ -2,7 +2,6 @@ Welcome to this project.
 This will be a sort of a personal page, like a portfolio or a personal blog.
 
 Get a preview at https://iceeburr.ru
-
 Site doesn't work? Check the status at https://status.iceeburr.ru
 
 I don't guarantee that the site will be up 24/7 or the latest version of the repo.
