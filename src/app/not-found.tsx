@@ -31,7 +31,7 @@ const NotFoundPage = () => {
   }, []);
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-b from-gray-800 to-black">
+    <div className="min-h-screen flex flex-col justify-center items-center bg-gradient-to-b from-gray-800 to-black relative">
       <div className="absolute inset-0 overflow-hidden">
         <div
           ref={raysRef}
@@ -48,11 +48,13 @@ const NotFoundPage = () => {
           Go to landing page
         </Link>
       </div>
-      <div className="fixed bottom-0 left-0 p-4">
-        <Link href="/" className="text-4xl font-rowdies not-found-logo">
-          iceeburr.ru
-        </Link>
-      </div>
+      <footer className="w-full p-4 absolute bottom-0">
+        <div className="inline-block p-4">
+          <Link href="/" className="text-4xl font-rowdies not-found-logo">
+            iceeburr.ru
+          </Link>
+        </div>
+      </footer>
     </div>
   );
 };
