@@ -1,6 +1,7 @@
 "use client";
 import React, { useRef, useEffect } from "react";
 import Link from "next/link";
+import Image from 'next/image';
 import { gsap } from "gsap";
 
 const NotFoundPage = () => {
@@ -44,9 +45,14 @@ const NotFoundPage = () => {
           You tried to access a page that doesn&apos;t exist. Maybe you made a
           typo in the link.
         </p>
-        <Link href="/" className="not-found-return text-blue-300">
-          Go to landing page
-        </Link>
+        <div className="inline-flex items-center relative text-blue-300">
+          <Link href="/" className="not-found-hover-group not-found-return">
+            Go to landing page
+          </Link>
+          <div className="not-found-rocket-emoji ml-2 opacity-0 transition-opacity duration-500 ease-in-out pointer-events-none">
+            <Image src="/rocket.webp" alt="" width={50} height={50} />
+          </div>
+        </div>
       </div>
       <footer className="w-full p-4 absolute bottom-0">
         <div className="inline-block p-4">

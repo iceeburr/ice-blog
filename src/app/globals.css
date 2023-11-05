@@ -124,3 +124,7 @@
     -webkit-text-fill-color: transparent;
     opacity: 1;
 }
+
+.not-found-hover-group:hover + .not-found-rocket-emoji {
+    opacity: 1 !important;
+}
