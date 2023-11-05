@@ -1,3 +1,130 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Not Found Page */
+@keyframes not-found-rays-frames {
+    from {
+        background-position: 50% 50%, 50% 50%;
+    }
+    to {
+        background-position: 350% 50%, 350% 50%;
+    }
+}
+
+@keyframes not-found-return-frames {
+    0% {
+        background-position: -100% 50%;
+    }
+    100% {
+        background-position: 100% 50%;
+    }
+}
+
+.not-found-rays {
+    --stripes: repeating-linear-gradient(
+        100deg,
+        #fff 0%,
+        #fff 7%,
+        transparent 10%,
+        transparent 12%,
+        #fff 16%
+    );
+    --rainbow: repeating-linear-gradient(
+        100deg,
+        #60a5fa 10%,
+        #e879f9 15%,
+        #60a5fa 20%,
+        #5eead4 25%,
+        #60a5fa 30%
+    );
+    background-image: var(--stripes), var(--rainbow);
+    background-size: 300%, 200%;
+    background-position: 50% 50%, 50% 50%;
+
+    filter: blur(10px) brightness(35%) invert(5%);
+
+    mask-image: radial-gradient(ellipse at 100% 0%, black 40%, transparent 70%);
+
+    pointer-events: none;
+}
+
+.not-found-rays::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: var(--stripes), var(--rainbow);
+    background-size: 200%, 100%;
+    animation: not-found-rays-frames 60s linear infinite;
+    background-attachment: fixed;
+    mix-blend-mode: difference;
+}
+
+.not-found-return {
+    position: relative;
+    text-decoration: none;
+    transition: text-shadow 0.5s ease-in-out;
+  }
+
+.not-found-return:hover {
+    text-shadow: 0 0 10px rgb(147, 197, 253);
+}
+
+.not-found-return::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 50%;
+    background: linear-gradient(to right, #007cf0, #00dfd8, #007cf0);
+    background-size: 200% auto;
+    animation: not-found-return-frames 2s linear infinite;
+    border-radius: 1px;
+    transition: all 0.5s;
+}
+  
+.not-found-return:hover::after {
+    width: 100%;
+    left: 0;
+}
+
+@keyframes not-found-logo-keyframes {
+    0% {
+        background-position: 0% center;
+    }
+    100% {
+        background-position: -200% center;
+    }
+}
+
+.not-found-logo,
+.not-found-logo::before,
+.not-found-logo::after {
+    animation: not-found-logo-keyframes 5s ease-in-out infinite;
+    background: linear-gradient(to right, rgba(70,130,180,1), rgba(32,178,170,1), rgba(70,130,180,1));
+    background-size: 200%;
+    text-shadow: 0 0 1rem #ffffff15;
+    white-space: nowrap;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    opacity: 0.25;
+    transition: 0.2s ease-in-out;
+}
+
+.not-found-logo:hover,
+.not-found-logo:hover::before,
+.not-found-logo:hover::after {
+    animation: not-found-logo-keyframes 5s ease-in-out infinite;
+    background: linear-gradient(to right, rgba(70,130,180,1), rgba(32,178,170,1), rgba(70,130,180,1));
+    background-size: 200%;
+    text-shadow: 0 0 1rem #ffffff15;
+    white-space: nowrap;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    opacity: 1;
+}
+
+.not-found-hover-group:hover + .not-found-rocket-emoji {
+    opacity: 1 !important;
+}
