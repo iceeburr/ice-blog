@@ -1,4 +1,5 @@
 import './globals.css'
+import Head from 'next/head';
 import type { Metadata } from 'next'
 import { Rowdies, Varela_Round, Nunito, Comfortaa } from 'next/font/google'
 
@@ -38,6 +39,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${rowdies.variable} ${comfortaa.variable} ${varelaRound.variable} ${nunito.variable}`}>
+      <Head>
+        <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "0cde679152d1418f866ec4fd8ac69450"}'></script>
+      </Head>
       <body>{children}</body>
     </html>
   )
