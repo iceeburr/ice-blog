@@ -1,6 +1,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url('./fonts.css');
+
+body {
+    font-family: 'Torus', sans-serif;
+}
 
 /* Not Found Page */
 @keyframes not-found-rays-frames {

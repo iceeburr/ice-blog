@@ -9,6 +9,7 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
+        'torus': ['Torus', 'sans-serif'],
         'rowdies': ['var(--font-rowdies)', 'sans-serif'],
         'varela-round': ['var(--font-varelaRound)', 'sans-serif'],
         'comfortaa': ['var(--font-comfortaa)', 'sans-serif'],
