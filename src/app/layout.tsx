@@ -61,7 +61,10 @@ const rowdies = localFont({
 
 
 export const metadata: Metadata = {
-  title: "</> Coding with Love ❤️",
+  title: {
+    template: '',
+    default: '</> Coding with Love ❤️',
+  },
   description: "Everything starts off somewhere. Let's start our journey to make the world a better place for our future.",
 }
 
