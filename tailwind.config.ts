@@ -9,10 +9,19 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
+        'torus': ['var(--font-torus)', 'sans-serif'],
         'rowdies': ['var(--font-rowdies)', 'sans-serif'],
-        'varela-round': ['var(--font-varelaRound)', 'sans-serif'],
-        'comfortaa': ['var(--font-comfortaa)', 'sans-serif'],
-        'nunito': ['var(--font-nunito)', 'sans-serif'],
+      },
+      fontWeight: {
+        'thin': '100',
+        'extralight': '200',
+        'light': '300',
+        'normal': '400',
+        'medium': '500',
+        'semibold': '600',
+        'bold': '700',
+        'extrabold': '800',
+        'black': '900',
       },
     },
   },
